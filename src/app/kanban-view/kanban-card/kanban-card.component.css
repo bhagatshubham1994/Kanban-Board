@@ -1,0 +1,7 @@
+.kanban_card {
+    border: 1px;
+    height: 20px;
+    background: white;
+    text-align: center;
+    margin: 10px;
+}

@@ -1,0 +1,24 @@
+<div class='kanban_view'>
+  <div class='kanban_controls'>
+    <!-- ip field & add btn  -->
+
+    <div class="add">
+      <input type="text" [(ngModel)]="newTask">
+      <button (click)="onAddCard()">Add</button>
+    </div>
+
+    <div>
+      <input type="text" [(ngModel)]="selectedCardName">
+      <button (click)="onMoveBackCard()" [disabled]="!selectedCard.backward" >Move Back</button>
+      <button (click)="onMoveForwardCard()" [disabled]="!selectedCard.forward" >Move Forward</button>
+      <button (click)="onDeleteCard()" [disabled]="!canBeDeleted">Delete</button>
+    </div>
+
+  </div>
+  <div class='kanban_stage_container'>
+    <!-- stage which consist multiple card i.e bugs/tasks -->
+    <div class="individual_div" *ngFor="let stage of stages">
+      <app-kanban-stage [stage]="stage" (onCardselect)="onCardselect($event)"></app-kanban-stage>
+    </div>
+  </div>
+</div>

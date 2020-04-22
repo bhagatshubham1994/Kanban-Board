@@ -1,0 +1,25 @@
+.kanban_stage_container {
+   display: inline;
+}
+
+
+
+.kanban_stage_container {
+    width:100%;
+}
+.kanban_stage_container > div {
+    display: inline-block;
+    zoom: 1;
+}
+
+.individual_div{
+    margin: 10px;
+}
+.kanban_controls {
+    padding: 10px;
+    background: grey;
+}
+
+.add {
+    padding-bottom: 20px;
+}

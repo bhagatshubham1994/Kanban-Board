@@ -1,0 +1,10 @@
+.kanban_stage {
+ border: 1px ;
+ width: 90px;
+ padding: 20px;
+ background: #DCDCDC;
+}
+
+.name {
+    text-align: center;
+}
