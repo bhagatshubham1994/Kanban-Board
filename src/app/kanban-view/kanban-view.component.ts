@@ -42,7 +42,7 @@ export class KanbanViewComponent implements OnInit {
 
   onAddCard() {
     if (this.newTask) {
-      this.stages[0].cards.push({ name: this.newTask, id: ++this.index, forward: true, backward: true });
+      this.stages[0].cards.push({ name: this.newTask, id: ++this.index, forward: true, backward: false });
       console.log(this.stages)
       this.newTask = null;
     }
@@ -63,7 +63,7 @@ export class KanbanViewComponent implements OnInit {
           this.canBeDeleted = true;
           let card = stage.cards[j];
           stage.cards.splice(j, 1);
-          if (i - 1 === 0) { // if card is in first stage 
+          if (i - 1 === 0) { // if card is in second stage 
             card.backward = false;
           }
           card.forward = true;
@@ -83,7 +83,7 @@ export class KanbanViewComponent implements OnInit {
           stage.cards.splice(j, 1);
           console.log('card', card)
           console.log(this.stages)
-          if (i + 1 === this.stages.length - 1) {  // if card is in last stage 
+          if (i + 1 === this.stages.length - 1) {  // if card is in 2nd last stage 
             card.forward = false;
           }
           card.backward = true;
